@@ -31,13 +31,13 @@ stages:
         
         - task: CopyFiles@2
           inputs:
-              SourceFolder: 'System.DefaultWorkingDirectory/kube-manifests'
+              SourceFolder: '(System.DefaultWorkingDirectory/kube-manifests)'
               Contents: '**'
-              TargetFolder: 'Build.ArtifactStagingDirectory'
+              TargetFolder: '(Build.ArtifactStagingDirectory)'
               OverWrite: true
           
         
-        - bash: echo Before copying Contents in Build Artifact Directory; ls -R $(Build.ArtifactStagingDirectory) 
+        - bash: echo Before copying Contents in Build Artifact Directory; ls -laR $(Build.ArtifactStagingDirectory) 
         - task: PublishBuildArtifacts@1
           inputs:
             PathtoPublish: '$(Build.ArtifactStagingDirectory)'
