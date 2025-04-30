@@ -33,7 +33,7 @@ stages:
           inputs:
               SourceFolder: '$(System.DefaultWorkingDirectory)/kube-manifests'
               Contents: '**'
-              TargetFolder: '(Build.ArtifactStagingDirectory)'
+              TargetFolder: '$(Build.ArtifactStagingDirectory)'
               OverWrite: true
           
         
